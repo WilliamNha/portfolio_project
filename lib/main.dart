@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
       title: 'Porfolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'Roboto',
-        primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
     );

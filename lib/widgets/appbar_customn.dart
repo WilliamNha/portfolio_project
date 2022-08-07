@@ -52,11 +52,17 @@ class _AppBarCustomState extends State<AppBarCustom> {
               ),
               Visibility(
                   visible: itemHovered[0],
-                  child: Container(
-                    height: 2,
-                    width: 16,
-                    color: textColor,
-                  )),
+                  child: itemHovered[0]
+                      ? Container(
+                          height: 2,
+                          width: 16,
+                          color: textColor,
+                        )
+                      : Container(
+                          height: 2,
+                          width: 16,
+                          color: Colors.white,
+                        )),
             ],
           ),
           SizedBox(
@@ -86,11 +92,17 @@ class _AppBarCustomState extends State<AppBarCustom> {
               ),
               Visibility(
                   visible: itemHovered[1],
-                  child: Container(
-                    height: 2,
-                    width: 20,
-                    color: textColor,
-                  )),
+                  child: itemHovered[1]
+                      ? Container(
+                          height: 2,
+                          width: 16,
+                          color: textColor,
+                        )
+                      : Container(
+                          height: 2,
+                          width: 16,
+                          color: Colors.white,
+                        )),
             ],
           ),
           SizedBox(
@@ -120,11 +132,17 @@ class _AppBarCustomState extends State<AppBarCustom> {
               ),
               Visibility(
                   visible: itemHovered[2],
-                  child: Container(
-                    height: 2,
-                    width: 20,
-                    color: textColor,
-                  )),
+                  child: itemHovered[2]
+                      ? Container(
+                          height: 2,
+                          width: 16,
+                          color: textColor,
+                        )
+                      : Container(
+                          height: 2,
+                          width: 16,
+                          color: Colors.white,
+                        )),
             ],
           ),
           SizedBox(
@@ -154,11 +172,17 @@ class _AppBarCustomState extends State<AppBarCustom> {
               ),
               Visibility(
                   visible: itemHovered[3],
-                  child: Container(
-                    height: 2,
-                    width: 20,
-                    color: textColor,
-                  )),
+                  child: itemHovered[3]
+                      ? Container(
+                          height: 2,
+                          width: 16,
+                          color: textColor,
+                        )
+                      : Container(
+                          height: 2,
+                          width: 16,
+                          color: Colors.white,
+                        )),
             ],
           ),
         ],
