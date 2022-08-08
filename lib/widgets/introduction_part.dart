@@ -24,11 +24,11 @@ class IntroductionPart extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                           text: 'I am a passionate ',
                           style: TextStyle(
                             fontFamily: 'Roboto',
-                            fontSize: 30,
+                            fontSize: screenSize.width >= 1200 ? 30 : 20,
                             height: 1.2,
                           ),
                           children: [
@@ -38,28 +38,32 @@ class IntroductionPart extends StatelessWidget {
                                     height: 1.2,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 30)),
+                                    fontSize:
+                                        screenSize.width >= 1200 ? 30 : 20)),
                             TextSpan(
                                 text: "and ",
                                 style: TextStyle(
                                     height: 1.2,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 30)),
+                                    fontSize:
+                                        screenSize.width >= 1200 ? 30 : 20)),
                             TextSpan(
                                 text: "ui/ux designer ",
                                 style: TextStyle(
                                     height: 1.2,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 30)),
+                                    fontSize:
+                                        screenSize.width >= 1200 ? 30 : 20)),
                             TextSpan(
                                 text: "with a keen eye for details.",
                                 style: TextStyle(
                                     height: 1.2,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 30))
+                                    fontSize:
+                                        screenSize.width >= 1200 ? 30 : 20))
                           ]),
                     ),
                   ),

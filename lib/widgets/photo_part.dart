@@ -37,8 +37,12 @@ class _PhotoPartState extends State<PhotoPart> {
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         'assets/images/profile.jpg',
-                        width: widget.screenSize.width / 4,
-                        height: widget.screenSize.width / 4,
+                        width: widget.screenSize.width >= 1200
+                            ? (widget.screenSize.width / 5)
+                            : (widget.screenSize.width / 4),
+                        height: widget.screenSize.width >= 1200
+                            ? (widget.screenSize.width / 5)
+                            : (widget.screenSize.width / 4),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -48,11 +52,14 @@ class _PhotoPartState extends State<PhotoPart> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsets.only(top: widget.screenSize.width / 20),
-                        child: const Text(
+                            EdgeInsets.only(top: widget.screenSize.width / 15),
+                        child: Text(
                           "Hi! I'm Panha Heng. I have a strong passion for coding and technology. I specialize in Front End and Mobile App Development and my passion is all about building elegant and professional user interfaces and mobile app. I also do brading and identify design such as logo design, letterhead and business card, along with photo editing, image cropping and other graphic design services.",
                           style: TextStyle(
-                              fontSize: 25, height: 2, fontFamily: 'Roboto'),
+                              fontSize:
+                                  widget.screenSize.width >= 1200 ? 25 : 20,
+                              height: 2,
+                              fontFamily: 'Roboto'),
                         ),
                       ),
                     ),
