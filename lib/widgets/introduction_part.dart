@@ -10,6 +10,7 @@ class IntroductionPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double fontSizeMobile = 25;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,48 +23,47 @@ class IntroductionPart extends StatelessWidget {
                     height: 50,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    padding: EdgeInsets.only(
+                        left: screenSize.width / 15,
+                        right: screenSize.width / 15),
                     child: RichText(
                       text: TextSpan(
                           text: 'I am a passionate ',
                           style: TextStyle(
                             fontFamily: 'Roboto',
-                            fontSize: screenSize.width >= 1200 ? 30 : 20,
-                            height: 1.2,
+                            fontSize: fontSizeMobile,
+                            height: 1.5,
                           ),
                           children: [
                             TextSpan(
                                 text: "front end developer ",
                                 style: TextStyle(
-                                    height: 1.2,
+                                    height: 1.5,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.bold,
-                                    fontSize:
-                                        screenSize.width >= 1200 ? 30 : 20)),
+                                    fontSize: fontSizeMobile)),
                             TextSpan(
                                 text: "and ",
                                 style: TextStyle(
-                                    height: 1.2,
+                                    height: 1.5,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.normal,
-                                    fontSize:
-                                        screenSize.width >= 1200 ? 30 : 20)),
+                                    fontSize: fontSizeMobile)),
                             TextSpan(
                                 text: "ui/ux designer ",
                                 style: TextStyle(
-                                    height: 1.2,
+                                    height: 1.5,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.bold,
-                                    fontSize:
-                                        screenSize.width >= 1200 ? 30 : 20)),
+                                    fontSize: fontSizeMobile)),
                             TextSpan(
                                 text: "with a keen eye for details.",
                                 style: TextStyle(
-                                    height: 1.2,
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.normal,
-                                    fontSize:
-                                        screenSize.width >= 1200 ? 30 : 20))
+                                  height: 1.5,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: fontSizeMobile,
+                                ))
                           ]),
                     ),
                   ),
@@ -79,11 +79,12 @@ class IntroductionPart extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(
                         left: screenSize.width / 5,
+                        
                         bottom: screenSize.height / 50),
-                    child: const Text(
+                    child: Text(
                       'I am a passionate',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: screenSize.width >= 1000 ? 30 : 25,
                       ),
                     ),
                   ),
@@ -91,10 +92,10 @@ class IntroductionPart extends StatelessWidget {
                     padding: EdgeInsets.only(
                         left: screenSize.width / 5,
                         bottom: screenSize.height / 50),
-                    child: const Text(
+                    child: Text(
                       'front-end developer',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: screenSize.width >= 1000 ? 30 : 25,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -103,10 +104,10 @@ class IntroductionPart extends StatelessWidget {
                     padding: EdgeInsets.only(
                         left: screenSize.width / 5,
                         bottom: screenSize.height / 50),
-                    child: const Text(
+                    child: Text(
                       'and ui/ux designer with a keen',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: screenSize.width >= 1000 ? 30 : 25,
                       ),
                     ),
                   ),
@@ -114,10 +115,10 @@ class IntroductionPart extends StatelessWidget {
                     padding: EdgeInsets.only(
                         left: screenSize.width / 5,
                         bottom: screenSize.height / 50),
-                    child: const Text(
+                    child: Text(
                       'eye for details.',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: screenSize.width >= 1000 ? 30 : 25,
                       ),
                     ),
                   ),

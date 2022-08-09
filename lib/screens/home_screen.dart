@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_practice/const.dart';
 import 'package:ui_practice/widgets/appbar_customn.dart';
+import 'package:ui_practice/widgets/education_part.dart';
 import 'package:ui_practice/widgets/introduction_part.dart';
 import 'package:ui_practice/widgets/photo_part.dart';
 
@@ -29,6 +30,7 @@ class _HomePageState extends State<HomePage> {
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
     return Scaffold(
+      backgroundColor: primaryColor,
       appBar: screenSize.width < 800
           ? AppBar(
               backgroundColor: Colors.transparent,
@@ -45,8 +47,9 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            IntroductionPart(screenSize: screenSize),
+            // IntroductionPart(screenSize: screenSize),
             PhotoPart(screenSize: screenSize),
+            EducationPart(screenSize: screenSize),
           ],
         ),
       ),

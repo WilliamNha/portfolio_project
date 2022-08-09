@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_practice/const.dart';
 import 'package:ui_practice/screens/home_screen.dart';
 
 void main() {
@@ -11,11 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Porfolio',
+      title: 'Flutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'Roboto',
+        textTheme: GoogleFonts.robotoTextTheme().copyWith(
+          headline1: const TextStyle(color: textColor),
+          headline2: const TextStyle(color: textColor),
+          bodyText2: const TextStyle(color: textColor),
+          subtitle1: const TextStyle(color: textColor),
+        ),
       ),
       home: const HomePage(),
     );

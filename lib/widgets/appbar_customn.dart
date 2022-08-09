@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:ui_practice/const.dart';
 
@@ -40,7 +42,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'Home',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[0] ? FontWeight.bold : FontWeight.normal,
@@ -80,7 +82,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'About',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[1] ? FontWeight.bold : FontWeight.normal,
@@ -120,7 +122,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'Works',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[2] ? FontWeight.bold : FontWeight.normal,
@@ -160,7 +162,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'Contact',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[3] ? FontWeight.bold : FontWeight.normal,
