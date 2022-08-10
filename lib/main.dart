@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.robotoTextTheme().copyWith(
+        fontFamily: GoogleFonts.lato().fontFamily,
+        textTheme:
+            // GoogleFonts.robotoTextTheme()
+            GoogleFonts.latoTextTheme().copyWith(
           headline1: const TextStyle(color: textColor),
           headline2: const TextStyle(color: textColor),
           bodyText2: const TextStyle(color: textColor),

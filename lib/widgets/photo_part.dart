@@ -3,16 +3,17 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:ui_practice/widgets/heading_part.dart';
 
-class PhotoPart extends StatefulWidget {
+class PhotoSection extends StatefulWidget {
   final Size screenSize;
-  const PhotoPart({Key? key, required this.screenSize}) : super(key: key);
+  const PhotoSection({Key? key, required this.screenSize}) : super(key: key);
 
   @override
-  State<PhotoPart> createState() => _PhotoPartState();
+  State<PhotoSection> createState() => _PhotoSectionState();
 }
 
-class _PhotoPartState extends State<PhotoPart> {
+class _PhotoSectionState extends State<PhotoSection> {
   @override
   Widget build(BuildContext context) {
     return widget.screenSize.width < 800
@@ -42,17 +43,13 @@ class _PhotoPartState extends State<PhotoPart> {
                 height: widget.screenSize.height / 15,
               ),
               Padding(
-                padding: EdgeInsets.only(
-                    left: widget.screenSize.width / 10,
-                    right: widget.screenSize.width / 10),
-                child: Text(
-                  "About Me",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: widget.screenSize.width >= 1000 ? 30 : 25,
-                      height: 2),
-                ),
-              ),
+                  padding: EdgeInsets.only(
+                      left: widget.screenSize.width / 10,
+                      right: widget.screenSize.width / 10),
+                  child: HeadingPart(
+                    screenSize: widget.screenSize,
+                    headingText: "About Me",
+                  )),
               SizedBox(
                 height: widget.screenSize.height / 20,
               ),
@@ -60,24 +57,27 @@ class _PhotoPartState extends State<PhotoPart> {
                 padding: EdgeInsets.only(
                     left: widget.screenSize.width / 10,
                     right: widget.screenSize.width / 10),
-                child: const Text(
+                child: Text(
                   "Hi! I'm Panha Heng. I have a strong passion for coding and technology. I specialize in Front End and Mobile App Development and my passion is all about building elegant and professional user interfaces and mobile app. I also do brading and identify design such as logo design, letterhead and business card, along with photo editing, image cropping and other graphic design services.",
-                  style: TextStyle(height: 2, fontSize: 18),
+                  style: TextStyle(
+                    height: 2,
+                    fontSize: 18,
+                  ),
                 ),
-              ),
+              )
             ],
           )
         : Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              // SizedBox(
-              //   height: widget.screenSize.height / 10,
-              // ),
+              SizedBox(
+                height: widget.screenSize.height / 5,
+              ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: widget.screenSize.width / 10,
-                    right: widget.screenSize.width / 12,
-                    top: widget.screenSize.width / 10),
+                  left: widget.screenSize.width / 8,
+                  right: widget.screenSize.width / 12,
+                ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -86,17 +86,17 @@ class _PhotoPartState extends State<PhotoPart> {
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         'assets/images/profile.jpg',
-                        width: widget.screenSize.width >= 1200
+                        width: widget.screenSize.width >= 1000
                             ? (widget.screenSize.width / 5)
                             : (widget.screenSize.width / 4),
-                        height: widget.screenSize.width >= 1200
+                        height: widget.screenSize.width >= 1000
                             ? (widget.screenSize.width / 5)
                             : (widget.screenSize.width / 4),
                         fit: BoxFit.fill,
                       ),
                     ),
                     SizedBox(
-                      width: widget.screenSize.width / 10,
+                      width: widget.screenSize.width / 15,
                     ),
                     Expanded(
                       child: Padding(
@@ -130,6 +130,9 @@ class _PhotoPartState extends State<PhotoPart> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: widget.screenSize.height / 15,
               ),
             ],
           );

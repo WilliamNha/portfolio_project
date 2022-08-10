@@ -4,6 +4,7 @@ import 'package:ui_practice/widgets/appbar_customn.dart';
 import 'package:ui_practice/widgets/education_part.dart';
 import 'package:ui_practice/widgets/introduction_part.dart';
 import 'package:ui_practice/widgets/photo_part.dart';
+import 'package:ui_practice/widgets/skill_part.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -45,11 +46,12 @@ class _HomePageState extends State<HomePage> {
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // IntroductionPart(screenSize: screenSize),
-            PhotoPart(screenSize: screenSize),
-            EducationPart(screenSize: screenSize),
+            PhotoSection(screenSize: screenSize),
+            EducationSection(screenSize: screenSize),
+            SkillSection(screenSize: screenSize),
           ],
         ),
       ),
