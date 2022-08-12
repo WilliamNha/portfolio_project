@@ -12,30 +12,31 @@ class SkillSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-          left: screenSize.width / 10, right: screenSize.width / 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: screenSize.height / 15,
-          ),
-          Container(
-            // color: Colors.yellow,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Expanded(
-                  child: Column(
+    return screenSize.width <= 800
+        ? Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    left: screenSize.width / 10, right: screenSize.width / 10),
+                child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
                     children: [
+                      SizedBox(
+                        height: screenSize.height / 15,
+                      ),
                       HeadingPart(
                           screenSize: screenSize, headingText: "Skills"),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Image.asset(
+                        'assets/images/programmer.png',
+                        width: double.infinity,
+                        height: 300,
+                        // width: double.infinity,
+                        fit: BoxFit.contain,
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
@@ -55,38 +56,85 @@ class SkillSection extends StatelessWidget {
                           leadingText: "Javascript",
                           percent: 0.5,
                           percentOnBar: "50%"),
-                      // const CustomLinearPercent(
-                      //     leadingText: "React",
-                      //     percent: 0.4,
-                      //     percentOnBar: "40%"),
-                    ],
-                  ),
+                      SizedBox(
+                        height: screenSize.height / 20,
+                      ),
+                    ]),
+              ),
+            ],
+          )
+        : Padding(
+            padding: EdgeInsets.only(
+                left: screenSize.width / 10, right: screenSize.width / 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: screenSize.height / 15,
                 ),
-                Expanded(
-                    child: Container(
-                  padding: EdgeInsets.only(
-                    left: screenSize.width / 25,
-                    // right: screenSize.width / 30,
-                  ),
-                  alignment: Alignment.center,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          HeadingPart(
+                              screenSize: screenSize, headingText: "Skills"),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const CustomLinearPercent(
+                              leadingText: "Dart",
+                              percent: 0.70,
+                              percentOnBar: "70%"),
+                          const CustomLinearPercent(
+                              leadingText: "Flutter",
+                              percent: 0.8,
+                              percentOnBar: "80%"),
+                          const CustomLinearPercent(
+                              leadingText: "Python",
+                              percent: 0.5,
+                              percentOnBar: "50%"),
+                          const CustomLinearPercent(
+                              leadingText: "Javascript",
+                              percent: 0.5,
+                              percentOnBar: "50%"),
+                          // const CustomLinearPercent(
+                          //     leadingText: "React",
+                          //     percent: 0.4,
+                          //     percentOnBar: "40%"),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.only(
+                        left: screenSize.width / 25,
+                        // right: screenSize.width / 30,
+                      ),
+                      alignment: Alignment.center,
 
-                  // color: Colors.yellow,
-                  child: Image.asset(
-                    'assets/images/programmer.png',
-                    width: double.infinity,
-                    height: 300,
-                    // width: double.infinity,
-                    fit: BoxFit.contain,
-                  ),
-                )),
+                      // color: Colors.yellow,
+                      child: Image.asset(
+                        'assets/images/programmer.png',
+                        width: double.infinity,
+                        height: 300,
+                        // width: double.infinity,
+                        fit: BoxFit.contain,
+                      ),
+                    )),
+                  ],
+                ),
+                SizedBox(
+                  height: screenSize.height / 20,
+                ),
               ],
             ),
-          ),
-          SizedBox(
-            height: screenSize.height / 20,
-          ),
-        ],
-      ),
-    );
+          );
   }
 }

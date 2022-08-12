@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:ui_practice/const.dart';
 
 class AppBarCustom extends StatefulWidget {
-  final Size screenSize;
+  final double opacity;
   const AppBarCustom({
-    required this.screenSize,
+    required this.opacity,
     Key? key,
   }) : super(key: key);
 
@@ -19,16 +19,18 @@ List itemHovered = [false, false, false, false];
 class _AppBarCustomState extends State<AppBarCustom> {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Container(
+      color: primaryColor.withOpacity(widget.opacity),
       padding: const EdgeInsets.only(top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            width: widget.screenSize.width / 3,
+            width: screenSize.width / 3,
           ),
           SizedBox(
-            width: widget.screenSize.width / 3,
+            width: screenSize.width / 3,
           ),
           Column(
             children: [
@@ -42,7 +44,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'Home',
                   style: TextStyle(
-                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
+                    fontSize: screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[0] ? FontWeight.bold : FontWeight.normal,
@@ -68,7 +70,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
             ],
           ),
           SizedBox(
-            width: widget.screenSize.width / 50,
+            width: screenSize.width / 50,
           ),
           Column(
             children: [
@@ -82,7 +84,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'About',
                   style: TextStyle(
-                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
+                    fontSize: screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[1] ? FontWeight.bold : FontWeight.normal,
@@ -108,7 +110,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
             ],
           ),
           SizedBox(
-            width: widget.screenSize.width / 50,
+            width: screenSize.width / 50,
           ),
           Column(
             children: [
@@ -122,7 +124,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'Works',
                   style: TextStyle(
-                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
+                    fontSize: screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[2] ? FontWeight.bold : FontWeight.normal,
@@ -148,7 +150,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
             ],
           ),
           SizedBox(
-            width: widget.screenSize.width / 50,
+            width: screenSize.width / 50,
           ),
           Column(
             children: [
@@ -162,7 +164,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                 child: Text(
                   'Contact',
                   style: TextStyle(
-                    fontSize: widget.screenSize.width >= 1200 ? 16 : 14,
+                    fontSize: screenSize.width >= 1200 ? 16 : 14,
                     color: textColor,
                     fontWeight:
                         itemHovered[3] ? FontWeight.bold : FontWeight.normal,

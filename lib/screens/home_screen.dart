@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_practice/const.dart';
 import 'package:ui_practice/widgets/appbar_customn.dart';
 import 'package:ui_practice/widgets/education_part.dart';
 import 'package:ui_practice/widgets/introduction_part.dart';
-import 'package:ui_practice/widgets/photo_part.dart';
+import 'package:ui_practice/widgets/about_me_section.dart';
+import 'package:ui_practice/widgets/menu_drawer.dart';
 import 'package:ui_practice/widgets/skill_part.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,31 +27,49 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    _scrollController.addListener(_scrollListener);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     _opacity = _scrollPosition < screenSize.height * 0.40
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
     return Scaffold(
-      backgroundColor: primaryColor,
+      // backgroundColor: primaryColor,
       appBar: screenSize.width < 800
           ? AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
+              title: const Text(
+                'Portfolio',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 3,
+                ),
+              ),
+              iconTheme: const IconThemeData(color: Colors.black),
+              backgroundColor: primaryColor,
+              elevation: 1,
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
               child: AppBarCustom(
-                screenSize: screenSize,
+                opacity: _opacity,
               ),
             ),
       extendBodyBehindAppBar: true,
+      drawer: const MenuDrawer(),
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PhotoSection(screenSize: screenSize),
+            AboutMeSection(screenSize: screenSize),
             EducationSection(screenSize: screenSize),
             SkillSection(screenSize: screenSize),
           ],

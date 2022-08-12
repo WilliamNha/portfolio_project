@@ -1,19 +1,16 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
+import 'package:ui_practice/widgets/animated_text_flutter.dart';
 import 'package:ui_practice/widgets/heading_part.dart';
 
-class PhotoSection extends StatefulWidget {
+class AboutMeSection extends StatefulWidget {
   final Size screenSize;
-  const PhotoSection({Key? key, required this.screenSize}) : super(key: key);
+  const AboutMeSection({Key? key, required this.screenSize}) : super(key: key);
 
   @override
-  State<PhotoSection> createState() => _PhotoSectionState();
+  State<AboutMeSection> createState() => _AboutMeSectionState();
 }
 
-class _PhotoSectionState extends State<PhotoSection> {
+class _AboutMeSectionState extends State<AboutMeSection> {
   @override
   Widget build(BuildContext context) {
     return widget.screenSize.width < 800
@@ -23,19 +20,28 @@ class _PhotoSectionState extends State<PhotoSection> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: widget.screenSize.height / 15,
+                height: widget.screenSize.height / 7,
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: widget.screenSize.width / 6,
-                    right: widget.screenSize.width / 5),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.asset(
-                    'assets/images/profile.jpg',
-                    width: widget.screenSize.width / 1.4,
-                    height: widget.screenSize.width / 1.6,
-                    fit: BoxFit.fill,
+                  //left 4
+                  //right 4
+                  left: widget.screenSize.width / 5,
+                  right: (widget.screenSize.width / 5),
+                ),
+                child: Center(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.asset(
+                      'assets/images/profile.jpg',
+                      width: widget.screenSize.width > 450
+                          ? widget.screenSize.width / 2
+                          : widget.screenSize.width / 1.4,
+                      height: widget.screenSize.width > 450
+                          ? (widget.screenSize.width / 2.2)
+                          : (widget.screenSize.width / 1.8),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),
@@ -57,14 +63,17 @@ class _PhotoSectionState extends State<PhotoSection> {
                 padding: EdgeInsets.only(
                     left: widget.screenSize.width / 10,
                     right: widget.screenSize.width / 10),
-                child: Text(
+                child: const Text(
                   "Hi! I'm Panha Heng. I have a strong passion for coding and technology. I specialize in Front End and Mobile App Development and my passion is all about building elegant and professional user interfaces and mobile app. I also do brading and identify design such as logo design, letterhead and business card, along with photo editing, image cropping and other graphic design services.",
                   style: TextStyle(
                     height: 2,
                     fontSize: 18,
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: widget.screenSize.height / 15,
+              ),
             ],
           )
         : Column(
@@ -75,7 +84,7 @@ class _PhotoSectionState extends State<PhotoSection> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: widget.screenSize.width / 8,
+                  left: widget.screenSize.width / 10,
                   right: widget.screenSize.width / 12,
                 ),
                 child: Row(
@@ -114,7 +123,11 @@ class _PhotoSectionState extends State<PhotoSection> {
                                   height: 2),
                             ),
                             SizedBox(
-                              height: widget.screenSize.height / 50,
+                              height: widget.screenSize.height / 30,
+                            ),
+                            const AnimatedTextFlutter(),
+                            SizedBox(
+                              height: widget.screenSize.height / 30,
                             ),
                             Text(
                               "Hi! I'm Panha Heng. I have a strong passion for coding and technology. I specialize in Front End and Mobile App Development and my passion is all about building elegant and professional user interfaces and mobile app. I also do brading and identify design such as logo design, letterhead and business card, along with photo editing, image cropping and other graphic design services.",
