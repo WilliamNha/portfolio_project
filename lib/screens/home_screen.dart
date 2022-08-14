@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_practice/const.dart';
 import 'package:ui_practice/widgets/appbar_customn.dart';
 import 'package:ui_practice/widgets/education_part.dart';
-import 'package:ui_practice/widgets/introduction_part.dart';
 import 'package:ui_practice/widgets/about_me_section.dart';
+import 'package:ui_practice/widgets/footer_section.dart';
 import 'package:ui_practice/widgets/menu_drawer.dart';
+import 'package:ui_practice/widgets/quote_section.dart';
 import 'package:ui_practice/widgets/skill_part.dart';
 
 class HomePage extends StatefulWidget {
@@ -68,10 +68,12 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AboutMeSection(screenSize: screenSize),
-            EducationSection(screenSize: screenSize),
-            SkillSection(screenSize: screenSize),
+          children: const [
+            AboutMeSection(),
+            EducationSection(),
+            SkillSection(),
+            QuoteSection(),
+            FooterSection(),
           ],
         ),
       ),

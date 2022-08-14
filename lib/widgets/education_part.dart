@@ -6,13 +6,11 @@ import 'package:ui_practice/widgets/heading_part.dart';
 class EducationSection extends StatelessWidget {
   const EducationSection({
     Key? key,
-    required this.screenSize,
   }) : super(key: key);
-
-  final Size screenSize;
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Container(
       color: Colors.white,
       child: Padding(

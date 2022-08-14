@@ -5,13 +5,11 @@ import 'package:ui_practice/widgets/heading_part.dart';
 class SkillSection extends StatelessWidget {
   const SkillSection({
     Key? key,
-    required this.screenSize,
   }) : super(key: key);
-
-  final Size screenSize;
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return screenSize.width <= 800
         ? Column(
             children: [
