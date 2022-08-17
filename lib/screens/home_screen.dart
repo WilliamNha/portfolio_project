@@ -39,16 +39,15 @@ class _HomePageState extends State<HomePage> {
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
     return Scaffold(
-      // backgroundColor: primaryColor,
       appBar: screenSize.width < 800
           ? AppBar(
               title: const Text(
-                'Portfolio',
+                'Porfolio',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 26,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: 3,
+                  letterSpacing: 1,
                 ),
               ),
               iconTheme: const IconThemeData(color: Colors.black),
@@ -58,11 +57,14 @@ class _HomePageState extends State<HomePage> {
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
               child: AppBarCustom(
+                scrollController: _scrollController,
                 opacity: _opacity,
               ),
             ),
       extendBodyBehindAppBar: true,
-      drawer: const MenuDrawer(),
+      drawer: MenuDrawer(
+        scrollController: _scrollController,
+      ),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(
