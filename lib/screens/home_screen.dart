@@ -19,7 +19,11 @@ class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
   double _scrollPosition = 0;
   double _opacity = 0;
+  final homeKey = GlobalKey();
+  final educationKey = GlobalKey();
+  final skillKey = GlobalKey();
 
+  final footerKey = GlobalKey();
   _scrollListener() {
     setState(() {
       _scrollPosition = _scrollController.position.pixels;
@@ -55,27 +59,97 @@ class _HomePageState extends State<HomePage> {
               elevation: 1,
             )
           : PreferredSize(
-              preferredSize: Size(screenSize.width, 70),
+              preferredSize: Size(screenSize.width, 50),
               child: AppBarCustom(
-                scrollController: _scrollController,
+                onHomeTap: () {
+                  _scrollController.position.ensureVisible(
+                    homeKey.currentContext!.findRenderObject()!,
+                    alignment:
+                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                    duration: const Duration(seconds: 1),
+                  );
+                },
+                onEducationTap: () {
+                  _scrollController.position.ensureVisible(
+                    educationKey.currentContext!.findRenderObject()!,
+                    alignment:
+                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                    duration: const Duration(seconds: 1),
+                  );
+                },
+                onSkillTap: () {
+                  _scrollController.position.ensureVisible(
+                    skillKey.currentContext!.findRenderObject()!,
+                    alignment:
+                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                    duration: const Duration(seconds: 1),
+                  );
+                },
+                onContactTap: () {
+                  _scrollController.position.ensureVisible(
+                    footerKey.currentContext!.findRenderObject()!,
+                    alignment:
+                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                    duration: const Duration(seconds: 1),
+                  );
+                },
                 opacity: _opacity,
               ),
             ),
       extendBodyBehindAppBar: true,
       drawer: MenuDrawer(
-        scrollController: _scrollController,
+        onHomeTap: () {
+          _scrollController.position.ensureVisible(
+            homeKey.currentContext!.findRenderObject()!,
+            alignment:
+                0.1, // How far into view the item should be scrolled (between 0 and 1).
+            duration: const Duration(seconds: 1),
+          );
+        },
+        onContactTap: () {
+          _scrollController.position.ensureVisible(
+            footerKey.currentContext!.findRenderObject()!,
+            alignment:
+                0.1, // How far into view the item should be scrolled (between 0 and 1).
+            duration: const Duration(seconds: 1),
+          );
+        },
+        onEducationTap: () {
+          _scrollController.position.ensureVisible(
+            educationKey.currentContext!.findRenderObject()!,
+            alignment:
+                0.1, // How far into view the item should be scrolled (between 0 and 1).
+            duration: const Duration(seconds: 1),
+          );
+        },
+        onSkillTap: () {
+          _scrollController.position.ensureVisible(
+            skillKey.currentContext!.findRenderObject()!,
+            alignment:
+                0.1, // How far into view the item should be scrolled (between 0 and 1).
+            duration: const Duration(seconds: 1),
+          );
+        },
       ),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            AboutMeSection(),
-            EducationSection(),
-            SkillSection(),
-            QuoteSection(),
-            FooterSection(),
+          children: [
+            AboutMeSection(
+              key: homeKey,
+            ),
+            EducationSection(
+              key: educationKey,
+            ),
+            SkillSection(
+              key: skillKey,
+            ),
+            const QuoteSection(),
+            FooterSection(
+              key: footerKey,
+            ),
           ],
         ),
       ),

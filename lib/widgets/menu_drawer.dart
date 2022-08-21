@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({
-    required this.scrollController,
+    required this.onContactTap,
+    required this.onEducationTap,
+    required this.onHomeTap,
+    required this.onSkillTap,
     Key? key,
   }) : super(key: key);
-  final ScrollController scrollController;
+  final VoidCallback onHomeTap;
+  final VoidCallback onEducationTap;
+  final VoidCallback onSkillTap;
+  final VoidCallback onContactTap;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -20,11 +26,7 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
-                  scrollController.animateTo(
-                    0,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
+                  onHomeTap();
                 },
                 child: const Text(
                   'Home',
@@ -41,32 +43,7 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
-                  scrollController.animateTo(
-                    400,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
-                },
-                child: const Text(
-                  'About Me',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-                child: Divider(
-                  color: Colors.black12,
-                  thickness: 2,
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                  scrollController.animateTo(
-                    780,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
+                  onEducationTap();
                 },
                 child: const Text(
                   'Education',
@@ -83,11 +60,7 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
-                  scrollController.animateTo(
-                    1200,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
+                  onSkillTap();
                 },
                 child: const Text(
                   'Skills',
@@ -104,11 +77,7 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
-                  scrollController.animateTo(
-                    scrollController.position.maxScrollExtent,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
+                  onContactTap();
                 },
                 child: const Text(
                   'Contact',

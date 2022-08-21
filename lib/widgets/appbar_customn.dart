@@ -3,11 +3,18 @@ import 'package:ui_practice/const.dart';
 
 class AppBarCustom extends StatefulWidget {
   const AppBarCustom({
-    required this.scrollController,
     required this.opacity,
+    required this.onSkillTap,
+    required this.onContactTap,
+    required this.onEducationTap,
+    required this.onHomeTap,
     Key? key,
   }) : super(key: key);
-  final ScrollController scrollController;
+  final VoidCallback onSkillTap;
+  final VoidCallback onHomeTap;
+  final VoidCallback onEducationTap;
+  final VoidCallback onContactTap;
+
   final double opacity;
   @override
   State<AppBarCustom> createState() => _AppBarCustomState();
@@ -18,11 +25,10 @@ List itemHovered = [false, false, false, false, false];
 class _AppBarCustomState extends State<AppBarCustom> {
   @override
   Widget build(BuildContext context) {
-    GlobalKey globalKey;
     var screenSize = MediaQuery.of(context).size;
     return Container(
       color: primaryColor.withOpacity(widget.opacity),
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -34,13 +40,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                     itemHovered[0] = value;
                   });
                 },
-                onTap: () {
-                  widget.scrollController.animateTo(
-                    0,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
-                },
+                onTap: widget.onHomeTap,
                 child: Text(
                   'Home',
                   style: TextStyle(
@@ -78,61 +78,10 @@ class _AppBarCustomState extends State<AppBarCustom> {
               InkWell(
                 onHover: (value) {
                   setState(() {
-                    itemHovered[1] = value;
-                  });
-                },
-                onTap: () {
-                  widget.scrollController.animateTo(
-                    120,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  );
-                },
-                child: Text(
-                  'About Me',
-                  style: TextStyle(
-                    fontSize: 15,
-                    // screenSize.width >= 1200 ? 16 : 14,
-                    color: textColor,
-                    fontWeight:
-                        itemHovered[1] ? FontWeight.bold : FontWeight.normal,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Visibility(
-                  visible: itemHovered[1],
-                  child: itemHovered[1]
-                      ? Container(
-                          height: 2,
-                          width: 16,
-                          color: textColor,
-                        )
-                      : Container(
-                          height: 2,
-                          width: 16,
-                          color: Colors.white,
-                        )),
-            ],
-          ),
-          SizedBox(
-            width: screenSize.width / 50,
-          ),
-          Column(
-            children: [
-              InkWell(
-                onHover: (value) {
-                  setState(() {
                     itemHovered[2] = value;
                   });
                 },
-                onTap: () {
-                  widget.scrollController.animateTo(520,
-                      duration: const Duration(seconds: 2),
-                      curve: Curves.fastOutSlowIn);
-                },
+                onTap: widget.onEducationTap,
                 child: Text(
                   'Education',
                   style: TextStyle(
@@ -173,11 +122,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                     itemHovered[3] = value;
                   });
                 },
-                onTap: () {
-                  widget.scrollController.animateTo(900,
-                      duration: const Duration(seconds: 2),
-                      curve: Curves.fastOutSlowIn);
-                },
+                onTap: widget.onSkillTap,
                 child: Text(
                   'Skills',
                   style: TextStyle(
@@ -218,12 +163,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
                     itemHovered[4] = value;
                   });
                 },
-                onTap: () {
-                  widget.scrollController.animateTo(
-                      widget.scrollController.position.maxScrollExtent,
-                      duration: const Duration(seconds: 2),
-                      curve: Curves.fastOutSlowIn);
-                },
+                onTap: widget.onContactTap,
                 child: Text(
                   'Contact',
                   style: TextStyle(
