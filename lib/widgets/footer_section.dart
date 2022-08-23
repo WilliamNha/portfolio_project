@@ -34,7 +34,7 @@ class FooterSection extends StatelessWidget {
             height: 10,
           ),
           const Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            padding: EdgeInsets.only(left: 20, right: 20),
             child: Text(
               "Let's build something together :)",
               style: TextStyle(
@@ -91,6 +91,75 @@ class FooterSection extends StatelessWidget {
           // const SizedBox(
           //   height: 5,
           // ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(
+                    Icons.home,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Phnom Penh, Cambodia",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 12),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(
+                    Icons.phone,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "(+855) 77 560481",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 12),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(
+                    Icons.mail,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "panhaheng76@gmail.com",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 12),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            height: screenSize.height / 20,
+          ),
           const Text(
             "@2022 Built by Panha Heng",
             textAlign: TextAlign.center,
