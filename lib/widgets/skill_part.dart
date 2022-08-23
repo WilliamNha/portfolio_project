@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:ui_practice/widgets/custom_linear_percent.dart';
 import 'package:ui_practice/widgets/heading_part.dart';
 
@@ -28,16 +29,20 @@ class SkillSection extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      Image.asset(
-                        'assets/images/programmer.png',
-                        width: double.infinity,
-                        height: 300,
-                        // width: double.infinity,
-                        fit: BoxFit.contain,
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      Lottie.asset('assets/images/study.json',
+                          width: double.infinity,
+                          height: 350,
+                          fit: BoxFit.contain),
+                      // Image.asset(
+                      //   'assets/images/programmer.png',
+                      //   width: double.infinity,
+                      //   height: 300,
+                      //   // width: double.infinity,
+                      //   fit: BoxFit.contain,
+                      // ),
+                      // const SizedBox(
+                      //   height: 20,
+                      // ),
                       const CustomLinearPercent(
                           leadingText: "Dart",
                           percent: 0.85,
@@ -112,25 +117,22 @@ class SkillSection extends StatelessWidget {
                     Expanded(
                         child: Container(
                       padding: EdgeInsets.only(
-                        left: screenSize.width / 25,
+                        left: screenSize.width / 15,
                         // right: screenSize.width / 30,
                       ),
                       alignment: Alignment.center,
 
                       // color: Colors.yellow,
-                      child: Image.asset(
-                        'assets/images/programmer.png',
-                        width: double.infinity,
-                        height: 300,
-                        // width: double.infinity,
-                        fit: BoxFit.contain,
-                      ),
+                      child: Lottie.asset('assets/images/study.json',
+                          width: double.infinity,
+                          height: 350,
+                          fit: BoxFit.contain),
                     )),
                   ],
                 ),
-                SizedBox(
-                  height: screenSize.height / 20,
-                ),
+                // SizedBox(
+                //   height: screenSize.height / 15,
+                // ),
               ],
             ),
           );
