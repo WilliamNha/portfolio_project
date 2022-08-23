@@ -33,32 +33,22 @@ class SkillSection extends StatelessWidget {
                           width: double.infinity,
                           height: 350,
                           fit: BoxFit.contain),
-                      // Image.asset(
-                      //   'assets/images/programmer.png',
-                      //   width: double.infinity,
-                      //   height: 300,
-                      //   // width: double.infinity,
-                      //   fit: BoxFit.contain,
-                      // ),
-                      // const SizedBox(
-                      //   height: 20,
-                      // ),
                       const CustomLinearPercent(
                           leadingText: "Dart",
-                          percent: 0.85,
-                          percentOnBar: "85%"),
+                          percent: 0.75,
+                          percentOnBar: "75%"),
                       const CustomLinearPercent(
                           leadingText: "Flutter",
                           percent: 0.8,
                           percentOnBar: "80%"),
                       const CustomLinearPercent(
                           leadingText: "Python",
-                          percent: 0.5,
-                          percentOnBar: "50%"),
+                          percent: 0.6,
+                          percentOnBar: "60%"),
                       const CustomLinearPercent(
                           leadingText: "Javascript",
-                          percent: 0.5,
-                          percentOnBar: "50%"),
+                          percent: 0.6,
+                          percentOnBar: "60%"),
                       SizedBox(
                         height: screenSize.height / 20,
                       ),
@@ -93,24 +83,20 @@ class SkillSection extends StatelessWidget {
                           ),
                           const CustomLinearPercent(
                               leadingText: "Dart",
-                              percent: 0.70,
-                              percentOnBar: "70%"),
+                              percent: 0.75,
+                              percentOnBar: "75%"),
                           const CustomLinearPercent(
                               leadingText: "Flutter",
                               percent: 0.8,
                               percentOnBar: "80%"),
                           const CustomLinearPercent(
                               leadingText: "Python",
-                              percent: 0.5,
-                              percentOnBar: "50%"),
+                              percent: 0.6,
+                              percentOnBar: "60%"),
                           const CustomLinearPercent(
                               leadingText: "Javascript",
-                              percent: 0.5,
-                              percentOnBar: "50%"),
-                          // const CustomLinearPercent(
-                          //     leadingText: "React",
-                          //     percent: 0.4,
-                          //     percentOnBar: "40%"),
+                              percent: 0.6,
+                              percentOnBar: "60%"),
                         ],
                       ),
                     ),

@@ -22,7 +22,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: screenSize.height / 7,
+                height: screenSize.height / 9,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -36,12 +36,16 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
                       'assets/images/profile.jpg',
-                      width: screenSize.width > 450
-                          ? screenSize.width / 2
-                          : screenSize.width / 1.4,
-                      height: screenSize.width > 450
-                          ? (screenSize.width / 2.2)
-                          : (screenSize.width / 1.8),
+                      width: screenSize.width > 650
+                          ? screenSize.width / 2.4
+                          : screenSize.width > 450
+                              ? screenSize.width / 2
+                              : screenSize.width / 1.4,
+                      height: screenSize.width > 650
+                          ? screenSize.width / 2.5
+                          : screenSize.width > 450
+                              ? (screenSize.width / 2.2)
+                              : (screenSize.width / 1.8),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -65,7 +69,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                 padding: EdgeInsets.only(
                     left: screenSize.width / 10, right: screenSize.width / 10),
                 child: const Text(
-                  "Hi! I'm Panha Heng. I have a strong passion for coding and technology. I specialize in Front End and Mobile App Development and my passion is all about building elegant and professional user interfaces and mobile app. I also do brading and identify design such as logo design, letterhead and business card, along with photo editing, image cropping and other graphic design services.",
+                  "Hi! I'm Panha Heng. I am a fresh graduate student with ICT major from Rangsit University. I have been developing mobile app for almost 2 years. Also I have a strong passion for coding and technology. I specialize in Front End and Cross-platform Mobile App Development and my passion is all about building elegant and professional user interfaces mobile app.",
                   style: TextStyle(
                     height: 2,
                     fontSize: 18,
@@ -129,7 +133,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                               height: screenSize.height / 30,
                             ),
                             Text(
-                              "Hi! I'm Panha Heng. I have a strong passion for coding and technology. I specialize in Front End and Mobile App Development and my passion is all about building elegant and professional user interfaces and mobile app. I also do brading and identify design such as logo design, letterhead and business card, along with photo editing, image cropping and other graphic design services.",
+                              "Hi! I'm Panha Heng. I am a fresh graduate student with ICT major from Rangsit University. I have been developing mobile app for almost 2 years. Also I have a strong passion for coding and technology. I specialize in Front End and Cross-platform Mobile App Development and my passion is all about building elegant and professional user interfaces mobile app.",
                               style: TextStyle(
                                 fontSize: screenSize.width >= 1000 ? 20 : 18,
                                 height: 2,

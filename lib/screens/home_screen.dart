@@ -45,18 +45,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: screenSize.width < 800
           ? AppBar(
-              title: const Text(
-                'Porfolio',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                ),
-              ),
+              // title: const Text(
+              //   'PH',
+              //   style: TextStyle(
+              //     color: Colors.black,
+              //     fontSize: 28,
+              //     fontWeight: FontWeight.bold,
+              //     letterSpacing: 1,
+              //   ),
+              // ),
               iconTheme: const IconThemeData(color: Colors.black),
-              backgroundColor: primaryColor,
-              elevation: 1,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              // elevation: 1,
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 50),
@@ -65,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                   _scrollController.position.ensureVisible(
                     homeKey.currentContext!.findRenderObject()!,
                     alignment:
-                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                        0.1, // How far into view the item should be scrolled (between 0 and 1).
                     duration: const Duration(seconds: 1),
                   );
                 },
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                   _scrollController.position.ensureVisible(
                     educationKey.currentContext!.findRenderObject()!,
                     alignment:
-                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                        0.1, // How far into view the item should be scrolled (between 0 and 1).
                     duration: const Duration(seconds: 1),
                   );
                 },
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   _scrollController.position.ensureVisible(
                     skillKey.currentContext!.findRenderObject()!,
                     alignment:
-                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                        0.1, // How far into view the item should be scrolled (between 0 and 1).
                     duration: const Duration(seconds: 1),
                   );
                 },
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                   _scrollController.position.ensureVisible(
                     footerKey.currentContext!.findRenderObject()!,
                     alignment:
-                        0.2, // How far into view the item should be scrolled (between 0 and 1).
+                        0.1, // How far into view the item should be scrolled (between 0 and 1).
                     duration: const Duration(seconds: 1),
                   );
                 },
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
           _scrollController.position.ensureVisible(
             skillKey.currentContext!.findRenderObject()!,
             alignment:
-                0.1, // How far into view the item should be scrolled (between 0 and 1).
+                0, // How far into view the item should be scrolled (between 0 and 1).
             duration: const Duration(seconds: 1),
           );
         },

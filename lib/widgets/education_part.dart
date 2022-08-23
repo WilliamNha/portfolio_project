@@ -33,17 +33,15 @@ class EducationSection extends StatelessWidget {
               children: [
                 EducationYearPart(
                     screenSize: screenSize,
-                    yearTitle: "2019 - Present",
-                    details:
-                        "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below"),
+                    yearTitle: "ESL Program Level (1-12)",
+                    details: "Beltei International Institute (2009 - 2014)"),
                 SizedBox(
                   width: screenSize.width >= 1200 ? 40 : 55,
                 ),
                 EducationYearPart(
                     screenSize: screenSize,
-                    yearTitle: "2019 - Present",
-                    details:
-                        "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below"),
+                    yearTitle: "ACE Genreal English Program",
+                    details: "Australian Center for Education (2014 - 2016)"),
               ],
             ),
             SizedBox(
@@ -54,17 +52,15 @@ class EducationSection extends StatelessWidget {
               children: [
                 EducationYearPart(
                     screenSize: screenSize,
-                    yearTitle: "2019 - Present",
-                    details:
-                        "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below"),
+                    yearTitle: "Grade 12 High School Diploma",
+                    details: "Beltei International Institute (2012 - 2018)"),
                 SizedBox(
                   width: screenSize.width >= 1200 ? 40 : 55,
                 ),
                 EducationYearPart(
                     screenSize: screenSize,
-                    yearTitle: "2019 - Present",
-                    details:
-                        "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below"),
+                    yearTitle: "Bachelor Degree in ICT",
+                    details: "Rangsit University (2019 - 2022)"),
               ],
             ),
             SizedBox(

@@ -23,61 +23,74 @@ class FooterSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Text(
-              "Let's work together.",
+              "Get in touch",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: screenSize.width > 500 ? 40 : 25),
+                  fontSize: screenSize.width > 400 ? 40 : 35),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Text(
+              "Let's build something together :)",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 12),
             ),
           ),
           SizedBox(
             height: screenSize.height / 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SocialButton(
-                alignment: Alignment.centerLeft,
-                icon: FontAwesomeIcons.linkedin,
-                color: Colors.white,
-                iconSize: 20,
-                onPressed: () {},
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              SocialButton(
-                alignment: Alignment.centerLeft,
-                icon: FontAwesomeIcons.facebook,
-                color: Colors.white,
-                iconSize: 20,
-                onPressed: () {},
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              SocialButton(
-                alignment: Alignment.centerLeft,
-                icon: FontAwesomeIcons.instagram,
-                color: Colors.white,
-                iconSize: 20,
-                onPressed: () {},
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              SocialButton(
-                alignment: Alignment.centerLeft,
-                icon: FontAwesomeIcons.telegram,
-                color: Colors.white,
-                iconSize: 20,
-                onPressed: () {},
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 5,
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     SocialButton(
+          //       alignment: Alignment.centerLeft,
+          //       icon: FontAwesomeIcons.linkedin,
+          //       color: Colors.white,
+          //       iconSize: 20,
+          //       onPressed: () {},
+          //     ),
+          //     const SizedBox(
+          //       width: 12,
+          //     ),
+          //     SocialButton(
+          //       alignment: Alignment.centerLeft,
+          //       icon: FontAwesomeIcons.facebook,
+          //       color: Colors.white,
+          //       iconSize: 20,
+          //       onPressed: () {},
+          //     ),
+          //     const SizedBox(
+          //       width: 12,
+          //     ),
+          //     SocialButton(
+          //       alignment: Alignment.centerLeft,
+          //       icon: FontAwesomeIcons.instagram,
+          //       color: Colors.white,
+          //       iconSize: 20,
+          //       onPressed: () {},
+          //     ),
+          //     const SizedBox(
+          //       width: 12,
+          //     ),
+          //     SocialButton(
+          //       alignment: Alignment.centerLeft,
+          //       icon: FontAwesomeIcons.telegram,
+          //       color: Colors.white,
+          //       iconSize: 20,
+          //       onPressed: () {},
+          //     ),
+          //   ],
+          // ),
+          // const SizedBox(
+          //   height: 5,
+          // ),
           const Text(
             "@2022 Built by Panha Heng",
             textAlign: TextAlign.center,
@@ -102,7 +115,7 @@ class FooterSection extends StatelessWidget {
                     height: 1.5,
                     fontSize: 12),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               SvgPicture.asset(
