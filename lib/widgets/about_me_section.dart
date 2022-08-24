@@ -35,12 +35,12 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/images/profile.jpg',
+                      'assets/images/my_pic.jpeg',
                       width: screenSize.width > 650
-                          ? screenSize.width / 2.4
+                          ? screenSize.width / 2.5
                           : screenSize.width > 450
-                              ? screenSize.width / 2
-                              : screenSize.width / 1.4,
+                              ? screenSize.width / 2.2
+                              : screenSize.width / 1.8,
                       height: screenSize.width > 650
                           ? screenSize.width / 2.5
                           : screenSize.width > 450
@@ -64,6 +64,13 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                   )),
               SizedBox(
                 height: screenSize.height / 20,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: screenSize.width / 10),
+                child: const AnimatedTextFlutter(),
+              ),
+              SizedBox(
+                height: screenSize.height / 50,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -99,7 +106,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
-                        'assets/images/profile.jpg',
+                        'assets/images/my_pic.jpeg',
                         width: screenSize.width >= 1000
                             ? (screenSize.width / 5)
                             : (screenSize.width / 4),

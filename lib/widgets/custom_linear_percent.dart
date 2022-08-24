@@ -16,6 +16,7 @@ class CustomLinearPercent extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 15, bottom: 25),
       child: LinearPercentIndicator(
+        restartAnimation: true,
         backgroundColor: Colors.black12,
         onAnimationEnd: () {},
         leading: SizedBox(

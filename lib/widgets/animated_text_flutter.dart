@@ -11,39 +11,49 @@ class AnimatedTextFlutter extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return DefaultTextStyle(
-      style: Theme.of(context)
-          .textTheme
-          .subtitle1!
-          .copyWith(fontSize: screenSize.width >= 1000 ? 18 : textSize ?? 14),
+      style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          fontSize: screenSize.width >= 1000
+              ? 17
+              : screenSize.width > 470
+                  ? 18
+                  : 16,
+          fontWeight: FontWeight.bold),
       child: Row(
         children: [
-          const Text.rich(TextSpan(text: '<', children: [
-            TextSpan(
-              text: "flutter",
-              style: TextStyle(color: Color(0xff44d1fd)),
-            ),
-            TextSpan(text: ">"),
-          ])),
-          const SizedBox(
-            width: 5,
+          screenSize.width >= 1000
+              ? const Text.rich(TextSpan(text: '<', children: [
+                  TextSpan(
+                    text: "flutter",
+                    style: TextStyle(color: Color(0xff44d1fd)),
+                  ),
+                  TextSpan(text: ">"),
+                ]))
+              : SizedBox(),
+          SizedBox(
+            width: screenSize.width >= 1000 ? 5 : 0,
           ),
           // const Text("I build "),
           AnimatedTextKit(animatedTexts: [
             TyperAnimatedText(
-              "I build mobile crossplatform app with Flutter.",
+              screenSize.width > 470
+                  ? "I build mobile cross-platform app with Flutter."
+                  : "I build mobile app with Flutter.",
             ),
           ]),
           const SizedBox(
             width: 5,
           ),
-          const Text.rich(TextSpan(text: '</', children: [
-            TextSpan(
-              text: "flutter",
-              style: TextStyle(
-                  color: Color(0xff44d1fd), fontWeight: FontWeight.normal),
-            ),
-            TextSpan(text: ">"),
-          ])),
+          screenSize.width >= 1000
+              ? const Text.rich(TextSpan(text: '</', children: [
+                  TextSpan(
+                    text: "flutter",
+                    style: TextStyle(
+                        color: Color(0xff44d1fd),
+                        fontWeight: FontWeight.normal),
+                  ),
+                  TextSpan(text: ">"),
+                ]))
+              : SizedBox(),
         ],
       ),
     );
