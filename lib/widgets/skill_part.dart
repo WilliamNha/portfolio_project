@@ -30,10 +30,18 @@ class SkillSection extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      Lottie.asset('assets/images/study.json',
-                          width: double.infinity,
-                          height: 350,
-                          fit: BoxFit.contain),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30, right: 30),
+                        child: Center(
+                          child: SvgPicture.asset('assets/svg/programming.svg',
+                              width: double.infinity,
+                              height: 260,
+                              fit: BoxFit.contain),
+                        ),
+                      ),
+                      SizedBox(
+                        height: screenSize.height / 30,
+                      ),
                       const CustomLinearPercent(
                           leadingText: "Dart",
                           percent: 0.75,
@@ -102,18 +110,21 @@ class SkillSection extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                        child: Container(
-                      padding: EdgeInsets.only(
-                        left: screenSize.width / 15,
-                        // right: screenSize.width / 30,
-                      ),
-                      alignment: Alignment.center,
+                        child: Center(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          bottom: 30,
+                          left: screenSize.width / 15,
+                          // right: screenSize.width / 30,
+                        ),
+                        alignment: Alignment.center,
 
-                      // color: Colors.yellow,
-                      child: SvgPicture.asset('assets/svg/programming.svg',
-                          width: double.infinity,
-                          height: 350,
-                          fit: BoxFit.contain),
+                        // color: Colors.yellow,
+                        child: SvgPicture.asset('assets/svg/programming.svg',
+                            width: double.infinity,
+                            height: 300,
+                            fit: BoxFit.contain),
+                      ),
                     )),
                   ],
                 ),

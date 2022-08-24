@@ -40,7 +40,7 @@ class EducationSection extends StatelessWidget {
                 ),
                 EducationYearPart(
                     screenSize: screenSize,
-                    yearTitle: "ACE Genreal English Program",
+                    yearTitle: "ACE General English Program",
                     details: "Australian Center for Education (2014 - 2016)"),
               ],
             ),
