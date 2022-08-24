@@ -14,7 +14,11 @@ class HeadingPart extends StatelessWidget {
     return Text(
       headingText,
       style: TextStyle(
-          fontSize: screenSize.width >= 1000 ? 30 : 25,
+          fontSize: screenSize.width >= 1000
+              ? 30
+              : screenSize.width > 800
+                  ? 25
+                  : 23,
           fontWeight: FontWeight.bold),
     );
   }

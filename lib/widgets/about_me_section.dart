@@ -68,11 +68,11 @@ class _AboutMeSectionState extends State<AboutMeSection> {
               Padding(
                 padding: EdgeInsets.only(
                     left: screenSize.width / 10, right: screenSize.width / 10),
-                child: const Text(
+                child: Text(
                   "Hi! I'm Panha Heng. I am a fresh graduate student with ICT major from Rangsit University. I have been developing mobile app for almost 2 years. Also I have a strong passion for coding and technology. I specialize in Front End and Cross-platform Mobile App Development and my passion is all about building elegant and professional user interfaces mobile app.",
                   style: TextStyle(
                     height: 2,
-                    fontSize: 18,
+                    fontSize: screenSize.width > 730 ? 18 : 16,
                   ),
                 ),
               ),

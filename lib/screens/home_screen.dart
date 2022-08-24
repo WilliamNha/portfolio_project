@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ui_practice/const.dart';
 import 'package:ui_practice/widgets/appbar_customn.dart';
 import 'package:ui_practice/widgets/education_part.dart';
 import 'package:ui_practice/widgets/about_me_section.dart';
@@ -45,15 +44,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: screenSize.width < 800
           ? AppBar(
-              // title: const Text(
-              //   'PH',
-              //   style: TextStyle(
-              //     color: Colors.black,
-              //     fontSize: 28,
-              //     fontWeight: FontWeight.bold,
-              //     letterSpacing: 1,
-              //   ),
-              // ),
               iconTheme: const IconThemeData(color: Colors.black),
               backgroundColor: Colors.transparent,
               elevation: 0,

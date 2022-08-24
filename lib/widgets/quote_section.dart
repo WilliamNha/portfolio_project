@@ -27,7 +27,11 @@ class QuoteSection extends StatelessWidget {
                     color: Colors.black38,
                     fontWeight: FontWeight.bold,
                     height: 1.5,
-                    fontSize: screenSize.width > 600 ? 28 : 25),
+                    fontSize: screenSize.width > 800
+                        ? 28
+                        : screenSize.width > 400
+                            ? 25
+                            : 20),
               ),
             ),
           ),
@@ -43,7 +47,11 @@ class QuoteSection extends StatelessWidget {
                   color: Colors.black54,
                   fontWeight: FontWeight.normal,
                   height: 1.5,
-                  fontSize: screenSize.width > 600 ? 28 : 20),
+                  fontSize: screenSize.width > 800
+                      ? 28
+                      : screenSize.width > 400
+                          ? 22
+                          : 18),
             ),
           ),
           SizedBox(

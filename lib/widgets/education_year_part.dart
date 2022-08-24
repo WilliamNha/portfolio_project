@@ -21,9 +21,9 @@ class EducationYearPart extends StatelessWidget {
         children: [
           Text(
             yearTitle,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: screenSize.width > 800 ? 18 : 16,
             ),
           ),
           const SizedBox(
@@ -32,7 +32,7 @@ class EducationYearPart extends StatelessWidget {
           Text(
             details,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: screenSize.width > 800 ? 18 : 16,
               // screenSize.width >= 1000 ? 18 : 16,
               color: textColor.withOpacity(0.8),
             ),

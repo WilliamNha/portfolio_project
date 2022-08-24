@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ui_practice/widgets/social_button.dart';
 
 class FooterSection extends StatelessWidget {
   const FooterSection({
@@ -27,83 +25,41 @@ class FooterSection extends StatelessWidget {
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: screenSize.width > 400 ? 40 : 35),
+                  fontSize: screenSize.width > 400 ? 40 : 30),
             ),
           ),
           const SizedBox(
             height: 10,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 20, right: 20),
             child: Text(
               "Let's build something together :)",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.normal,
-                  fontSize: 12),
+                  fontSize: screenSize.width > 400 ? 14 : 10),
             ),
           ),
           SizedBox(
             height: screenSize.height / 20,
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     SocialButton(
-          //       alignment: Alignment.centerLeft,
-          //       icon: FontAwesomeIcons.linkedin,
-          //       color: Colors.white,
-          //       iconSize: 20,
-          //       onPressed: () {},
-          //     ),
-          //     const SizedBox(
-          //       width: 12,
-          //     ),
-          //     SocialButton(
-          //       alignment: Alignment.centerLeft,
-          //       icon: FontAwesomeIcons.facebook,
-          //       color: Colors.white,
-          //       iconSize: 20,
-          //       onPressed: () {},
-          //     ),
-          //     const SizedBox(
-          //       width: 12,
-          //     ),
-          //     SocialButton(
-          //       alignment: Alignment.centerLeft,
-          //       icon: FontAwesomeIcons.instagram,
-          //       color: Colors.white,
-          //       iconSize: 20,
-          //       onPressed: () {},
-          //     ),
-          //     const SizedBox(
-          //       width: 12,
-          //     ),
-          //     SocialButton(
-          //       alignment: Alignment.centerLeft,
-          //       icon: FontAwesomeIcons.telegram,
-          //       color: Colors.white,
-          //       iconSize: 20,
-          //       onPressed: () {},
-          //     ),
-          //   ],
-          // ),
-          // const SizedBox(
-          //   height: 5,
-          // ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
+                children: [
                   Icon(
                     Icons.home,
                     color: Colors.white,
-                    size: 30,
+                    size: screenSize.width > 800
+                        ? 30
+                        : screenSize.width > 500
+                            ? 25
+                            : 22,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -111,19 +67,29 @@ class FooterSection extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.normal,
-                        fontSize: 12),
+                        fontSize: screenSize.width > 800
+                            ? 12
+                            : screenSize.width > 500
+                                ? 10
+                                : screenSize.width > 400
+                                    ? 9
+                                    : 8),
                   ),
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
+                children: [
                   Icon(
                     Icons.phone,
                     color: Colors.white,
-                    size: 30,
+                    size: screenSize.width > 800
+                        ? 30
+                        : screenSize.width > 500
+                            ? 25
+                            : 22,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -131,19 +97,29 @@ class FooterSection extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.normal,
-                        fontSize: 12),
+                        fontSize: screenSize.width > 800
+                            ? 12
+                            : screenSize.width > 500
+                                ? 10
+                                : screenSize.width > 400
+                                    ? 9
+                                    : 8),
                   ),
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
+                children: [
                   Icon(
                     Icons.mail,
                     color: Colors.white,
-                    size: 30,
+                    size: screenSize.width > 800
+                        ? 30
+                        : screenSize.width > 500
+                            ? 25
+                            : 22,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -151,7 +127,13 @@ class FooterSection extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.normal,
-                        fontSize: 12),
+                        fontSize: screenSize.width > 800
+                            ? 12
+                            : screenSize.width > 500
+                                ? 10
+                                : screenSize.width > 400
+                                    ? 9
+                                    : 8),
                   ),
                 ],
               ),
@@ -160,14 +142,14 @@ class FooterSection extends StatelessWidget {
           SizedBox(
             height: screenSize.height / 20,
           ),
-          const Text(
+          Text(
             "@2022 Built by Panha Heng",
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.normal,
                 height: 1.5,
-                fontSize: 12),
+                fontSize: screenSize.width > 400 ? 12 : 10),
           ),
           const SizedBox(
             height: 5,
@@ -175,22 +157,22 @@ class FooterSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 "Built using Flutter",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.normal,
                     height: 1.5,
-                    fontSize: 12),
+                    fontSize: screenSize.width > 400 ? 12 : 10),
               ),
               const SizedBox(
                 width: 5,
               ),
               SvgPicture.asset(
                 'assets/svg/flutter.svg',
-                width: 15,
-                height: 15,
+                width: screenSize.width > 400 ? 15 : 12,
+                height: screenSize.width > 400 ? 15 : 12,
               ),
             ],
           ),
