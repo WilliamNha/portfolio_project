@@ -25,7 +25,7 @@ class FooterSection extends StatelessWidget {
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: screenSize.width > 400 ? 40 : 30),
+                  fontSize: screenSize.width > 400 ? 37 : 30),
             ),
           ),
           const SizedBox(
