@@ -44,10 +44,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: screenSize.width < 800
           ? AppBar(
-              title: Text(
-                "${_scrollPosition}",
-                style: TextStyle(color: Colors.red),
-              ),
+              // title: Text(
+              //   "${_scrollPosition}",
+              //   style: TextStyle(color: Colors.red),
+              // ),
               iconTheme: const IconThemeData(color: Colors.black),
               backgroundColor: Colors.transparent,
               elevation: 0,
