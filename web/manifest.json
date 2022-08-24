@@ -1,6 +1,6 @@
 {
-    "name": "ui_practice",
-    "short_name": "ui_practice",
+    "name": "Panha App",
+    "short_name": "Panha App",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

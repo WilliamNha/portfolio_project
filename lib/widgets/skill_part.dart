@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ui_practice/widgets/custom_linear_percent.dart';
 import 'package:ui_practice/widgets/heading_part.dart';
@@ -109,7 +110,7 @@ class SkillSection extends StatelessWidget {
                       alignment: Alignment.center,
 
                       // color: Colors.yellow,
-                      child: Lottie.asset('assets/images/study.json',
+                      child: SvgPicture.asset('assets/svg/programming.svg',
                           width: double.infinity,
                           height: 350,
                           fit: BoxFit.contain),
