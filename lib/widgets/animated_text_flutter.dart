@@ -36,7 +36,7 @@ class AnimatedTextFlutter extends StatelessWidget {
           AnimatedTextKit(animatedTexts: [
             TyperAnimatedText(
               screenSize.width > 470
-                  ? "I build mobile cross-platform app with Flutter."
+                  ? "I build cross-platform mobile app with Flutter."
                   : "I build mobile app with Flutter.",
             ),
           ]),
